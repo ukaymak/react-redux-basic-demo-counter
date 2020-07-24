@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Counter from "./components/Counter";
+import IncreaseByTwo from "./components/IncreaseByTwo";
+import IncreaseCounter from "./components/IncreaseCounter";
+import DecreaseCounter from "./components/DecreaseCounter";
+import Clear from "./components/Clear";
+
+import { Container, Col, Row } from "reactstrap";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Col xs="6">
+          <Counter />
+          <Row>
+            <Col>
+              <IncreaseCounter />
+            </Col>
+            <Col>
+              <DecreaseCounter />
+            </Col>
+            <Col>
+              <IncreaseByTwo />
+            </Col>
+            <Col>
+              <Clear />
+            </Col>
+          </Row>
+        </Col>
+      </Container>
     </div>
   );
 }
